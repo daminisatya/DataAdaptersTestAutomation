@@ -1,0 +1,122 @@
+{
+    "ratings": {
+        "count": {
+            "1": "0", 
+            "3": "0", 
+            "2": "0", 
+            "5": "0", 
+            "4": "0"
+        }, 
+        "total_count": "0"
+    }, 
+    "obsolete": "false", 
+    "author_name": "Zendesk", 
+    "large_icon": "https://1.apps.zdusercontent.com/1/assets/1477544325-0b9c2407134f4a9e4e0b52b2f0fd9187/logo.png", 
+    "featured": "false", 
+    "opstatus": 0, 
+    "feature_color": "", 
+    "screenshots": [
+        "https://1.apps.zdusercontent.com/1/assets/1477544325-0b9c2407134f4a9e4e0b52b2f0fd9187/screenshot-0.png"
+    ], 
+    "id": "1", 
+    "raw_long_description": "An *iframe* is an HTML element that lets you nest one web page in another web page. The Zendesk Iframe app lets your agents quickly navigate to an external website and then return to their tickets without interrupting their workflow. Your agents can look up any external site and reference information such as order details or data on another system.\r\n\r\nThe Iframe app presents the external source as an iframe in your Zendesk Support instance. Your agents can access this page by clicking the Iframe app icon.\r\n\r\nThe Iframe app supports websites that include the [Zendesk App Framework (ZAF) SDK](https://github.com/zendesk/zendesk_app_framework_sdk). Check out [Iframes in Apps](https://developer.zendesk.com/apps/docs/agent/iframes_in_apps) to learn more.\r\n\r\nSee this [Iframe app article](https://support.zendesk.com/hc/en-us/articles/203660696) for more information on how to setup the app.\r\n\r\nFor questions, please email [support@zendesk.com](mailto:support@zendesk.com).\r\n\r\nBy enabling this app, You agree to the [Built by Zendesk Terms of Use](https://www.zendesk.com/company/built-by-zendesk/).", 
+    "parameters": [
+        {
+            "kind": "text", 
+            "name": "name", 
+            "created_at": "2014-04-29T01:58:11Z", 
+            "required": "true", 
+            "updated_at": "2014-04-29T01:58:11Z", 
+            "app_id": "1", 
+            "position": "0", 
+            "id": "5", 
+            "secure": "false"
+        }, 
+        {
+            "kind": "url", 
+            "name": "iframeURL", 
+            "created_at": "2014-04-29T01:58:11Z", 
+            "required": "true", 
+            "updated_at": "2014-04-29T01:58:11Z", 
+            "app_id": "1", 
+            "position": "1", 
+            "id": "1", 
+            "secure": "false"
+        }, 
+        {
+            "kind": "url", 
+            "name": "inactiveIconURL", 
+            "created_at": "2014-04-29T01:58:11Z", 
+            "required": "false", 
+            "updated_at": "2014-04-29T01:58:11Z", 
+            "app_id": "1", 
+            "position": "2", 
+            "id": "2", 
+            "secure": "false"
+        }, 
+        {
+            "kind": "url", 
+            "name": "hoverIconURL", 
+            "created_at": "2014-04-29T01:58:11Z", 
+            "required": "false", 
+            "updated_at": "2014-04-29T01:58:11Z", 
+            "app_id": "1", 
+            "position": "3", 
+            "id": "3", 
+            "secure": "false"
+        }, 
+        {
+            "kind": "url", 
+            "name": "selectedIconURL", 
+            "created_at": "2014-04-29T01:58:11Z", 
+            "required": "false", 
+            "updated_at": "2014-04-29T01:58:11Z", 
+            "app_id": "1", 
+            "position": "4", 
+            "id": "4", 
+            "secure": "false"
+        }, 
+        {
+            "default_value": "1", 
+            "kind": "checkbox", 
+            "name": "zafSdkSupport", 
+            "created_at": "2015-04-20T21:02:23Z", 
+            "required": "false", 
+            "updated_at": "2015-04-20T21:02:23Z", 
+            "app_id": "1", 
+            "position": "5", 
+            "id": "185217", 
+            "secure": "false"
+        }
+    ], 
+    "author_email": "support@zendesk.com", 
+    "single_install": "false", 
+    "framework_version": "1.0", 
+    "long_description": "<p>An <em>iframe</em> is an HTML element that lets you nest one web page in another web page. The Zendesk Iframe app lets your agents quickly navigate to an external website and then return to their tickets without interrupting their workflow. Your agents can look up any external site and reference information such as order details or data on another system.</p>\n\n<p>The Iframe app presents the external source as an iframe in your Zendesk Support instance. Your agents can access this page by clicking the Iframe app icon.</p>\n\n<p>The Iframe app supports websites that include the <a href=\"https://github.com/zendesk/zendesk_app_framework_sdk\">Zendesk App Framework (ZAF) SDK</a>. Check out <a href=\"https://developer.zendesk.com/apps/docs/agent/iframes_in_apps\">Iframes in Apps</a> to learn more.</p>\n\n<p>See this <a href=\"https://support.zendesk.com/hc/en-us/articles/203660696\">Iframe app article</a> for more information on how to setup the app.</p>\n\n<p>For questions, please email <a href=\"mailto:support@zendesk.com\">support@zendesk.com</a>.</p>\n\n<p>By enabling this app, You agree to the <a href=\"https://www.zendesk.com/company/built-by-zendesk/\">Built by Zendesk Terms of Use</a>.</p>\n", 
+    "version": "1.0.2", 
+    "short_description": "Embed any website in your Zendesk (formerly known as Sidebar Icon app)", 
+    "marketing_only": "false", 
+    "installable": "true", 
+    "owner_id": "269519", 
+    "default_locale": "en", 
+    "visibility": "public", 
+    "updated_at": "2017-01-30T03:01:46Z", 
+    "paid": "false", 
+    "httpStatusCode": 200, 
+    "categories": [
+        {
+            "name": "Productivity & Time-tracking", 
+            "id": "43"
+        }
+    ], 
+    "name": "Iframe", 
+    "deprecated": "false", 
+    "created_at": "2014-04-29T01:58:11Z", 
+    "products": [
+        "support"
+    ], 
+    "installation_instructions": "<p>To add the Iframe app to Zendesk Support:</p>\n\n<ol>\n<li>Sign in to your Zendesk Support account, then click the <strong>Manage</strong> icon at the bottom of the left nav bar.</li>\n<li>Select <strong>Marketplace</strong> from the Apps category.</li>\n<li>Search for &quot;&quot;Iframe&quot;&quot;, then click the Iframe app icon.</li>\n<li>Click <strong>Install App</strong> in the upper right of the page.</li>\n<li>Configure the app as follows, then click <strong>Install</strong>:\n\n<ul>\n<li>Iframe URL: Link to the page you want to display when agents click the Iframe app icon.</li>\n<li>Inactive Icon URL: Image that will be used when you are not interacting with the app.</li>\n<li>Hover Icon URL: Image that will be swapped out when an agent hovers over the image.</li>\n<li>Selected Icon URL: Image that will be used when an agent clicks the app icon.</li>\n<li>Title: Name for the application.</li>\n</ul></li>\n</ol>\n", 
+    "promoted": "false", 
+    "small_icon": "https://1.apps.zdusercontent.com/1/assets/1477544325-0b9c2407134f4a9e4e0b52b2f0fd9187/logo-small.png", 
+    "raw_installation_instructions": "To add the Iframe app to Zendesk Support:\r\n\r\n1. Sign in to your Zendesk Support account, then click the **Manage** icon at the bottom of the left nav bar.\r\n2. Select **Marketplace** from the Apps category.\r\n3. Search for \"\"Iframe\"\", then click the Iframe app icon.\r\n4. Click **Install App** in the upper right of the page.\r\n5. Configure the app as follows, then click **Install**:\r\n  * Iframe URL: Link to the page you want to display when agents click the Iframe app icon.\r\n  * Inactive Icon URL: Image that will be used when you are not interacting with the app.\r\n  * Hover Icon URL: Image that will be swapped out when an agent hovers over the image.\r\n  * Selected Icon URL: Image that will be used when an agent clicks the app icon.\r\n  * Title: Name for the application."
+}
