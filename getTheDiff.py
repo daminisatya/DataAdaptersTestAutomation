@@ -11,19 +11,12 @@ headers = {
     'cache-control': "no-cache"
     }
 
-def find_key(dic):
-	keys=[]
-	if isinstance(dic,dict): 
-		for key,value in dic.items():
-			if isinstance(value,dict):
-				keys.append(key)
-				keys.append(find_key(value))
-			elif isinstance(value,list):
-				keys.append(key)
-				keys.append(find_key(value[0]))
-			else:
-				keys.append(key)
-	return keys
+def get_keys(dl, keys_list):
+    if isinstance(dl, dict):
+        keys_list += dl.keys()
+        map(lambda x: get_keys(x, keys_list), dl.values())
+    elif isinstance(dl, list):
+        map(lambda x: get_keys(x, keys_list), dl)
 
 while countOfRequestsDone != NumberOfRequestsInQueue:
 	dataPayload = requestInformation[countOfRequestsDone].split(',')
@@ -36,21 +29,23 @@ while countOfRequestsDone != NumberOfRequestsInQueue:
 
 	with open(filename, 'r') as file1:
 		with open(filenameTest, 'r') as file2:
-			# json_objectTest = json.loads(file2)
 
-			# json_object = json.loads(file1)
+			originalData = json.load(file1)
+			testData = json.load(file2)
+			originalKeys = []
+			testKeys = []
+			get_keys(originalData, originalKeys)
+			get_keys(testData, testKeys)
 
-			# fileNameTestKeys = find_key(json_objectTest)
-			# fileNameKeys = find_key(json_object)
-			differentKeys = set(file1).difference(file2)
+			differentKeys = set(originalKeys).difference(testKeys)
 
 	differentKeys.discard('\n')
 	
-	print 
-	for line in differentKeys:
-		errorLogFileName = 'testFailures/ErrorLog' + url.split('/')[-1] + '.txt'
-		with open(errorLogFileName, 'w') as file_out:
+	errorLogFileName = 'testFailures/ErrorLog' + url.split('/')[-1] + '.txt'
+	with open(errorLogFileName, 'w') as file_out:
+		for line in differentKeys:
 			file_out.write(line)
+			file_out.write('\n')
 
 	countOfRequestsDone += 1
 
