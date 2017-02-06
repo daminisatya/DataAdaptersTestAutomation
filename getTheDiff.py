@@ -1,22 +1,22 @@
 import requests
 import json
 
-requestInformation = [request.rstrip('\n') for request in open('inputPayloads.txt')]
+requestInformation = [request.rstrip('\n') for request in open('damini.txt')]
 NumberOfRequestsInQueue = len(requestInformation)
 countOfRequestsDone = 0
 
 headers = {
     'content-type': "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
-    'X-Kony-Authorization': "eyAidHlwIjogImp3dCIsICJhbGciOiAiUlMyNTYiIH0.eyAiX3ZlciI6ICJ2MS4xIiwgImlzcyI6ICJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aFNlcnZpY2UvMTAwMDAwMDAyIiwgIl9zY29wZSI6ICJnIiwgIl9pc3NtZXRhIjogIi9tZXRhZGF0YS92Q3hOM3FjZjF4dE40b3ZhWjA3M1B3PT0iLCAiX3Nlc3Npb25faWQiOiAiMDk5MDM2MzgtZWFjYi00NjZhLTkwOWMtNWQyZDg4YjI4YjAxIiwgIl9wdWlkIjogNCwgIl9hdXRoeiI6ICJleUp3WlhKdGFYTnphVzl1Y3lJNmUzMHNJbkp2YkdWeklqcGJYWDAiLCAiX2lkcCI6ICJ6ZW5kZXNrSWRlbnRpdHkiLCAiZXhwIjogMTQ4NTg1NTk4MSwgImlhdCI6IDE0ODU4NTIzODEsICJfc2Vzc2lvbl90aWQiOiAiMTAwMDAwMDAyIiwgIl9wcm92X3VzZXJpZCI6ICJhdXRoZW50aWNhdGVkdXNlciIsICJqdGkiOiAiNDk0OTI5NWYtMjRjZC00YmYzLTkzZDktYWI0Y2M0ODQ1ZTA0IiwgIl9hY3MiOiAiMTAwMDAwMDAyIiwgIl9wcm92aWRlcnMiOiBbICJ6ZW5kZXNrSWRlbnRpdHkiIF0gfQ.GhiDaySR-KL63UBT4_KPIEgcuR_nxkV-dHYMuGtoy_z-hgcssSC8uCoVo_eQcPEevQq3FpMPYQqnV05Rn1vRkYDgCS9KKv2nFODQe5tMWYwGAjDBrl0qi7Iuhdet7v0eyrWwpYxvoAXmEWnDT4Vs_YkD1AO3NkvCJFXe4f5U5t_bGwafl4VcbVh8G0dv33X4-YRfkJnBrttsvD_xH4pQRGEnbVwyHfZXAJz-mKflxXIrGk-UoPQF3386BgPHAIWN73h6ce1EjYsXjiYnkMgTgkxzopUeVp9WJHGjvMHWfkLN7ZTBd5l75Nhj9b3FUq6TrHJkgrExMVJPkWQNCOqp8Q",
+    'X-Kony-Authorization': "eyAidHlwIjogImp3dCIsICJhbGciOiAiUlMyNTYiIH0.eyAiX3ZlciI6ICJ2MS4xIiwgImlzcyI6ICJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aFNlcnZpY2UvMTAwMDAwMDAyIiwgIl9zY29wZSI6ICJnIiwgIl9pc3NtZXRhIjogIi9tZXRhZGF0YS9GX3V1Z29NQUFvbU1ZaURWaFlUSFFnPT0iLCAiX3Nlc3Npb25faWQiOiAiYTlkZWUyYjYtNTUzZS00ZDJkLTk3NzktODdkODExZWRjMTNiIiwgIl9wdWlkIjogNCwgIl9hdXRoeiI6ICJleUp3WlhKdGFYTnphVzl1Y3lJNmUzMHNJbkp2YkdWeklqcGJYWDAiLCAiX2lkcCI6ICJaZW5EZXNrIiwgImV4cCI6IDE0ODYzNTg2ODEsICJpYXQiOiAxNDg2MzU1MDgxLCAiX3Nlc3Npb25fdGlkIjogIjEwMDAwMDAwMiIsICJfcHJvdl91c2VyaWQiOiAiYXV0aGVudGljYXRlZHVzZXIiLCAianRpIjogIjExNDc3YWFhLTMwMDItNGJiMS1iZjZjLWUyN2VhZGVjMmM0OSIsICJfYWNzIjogIjEwMDAwMDAwMiIsICJfcHJvdmlkZXJzIjogWyAiWmVuRGVzayIgXSB9.iJ4M7ktzvHJzYlmprcOhG-b_x9kgPZE4QvdSYultXF30-Ok3BpQpVSi8PtL4bLlJToSE9bg5_xrwVYl3l4iZ351NR4ZT5R1EKJtJ4PGFxv6iPhnei-TLBAcDNRfTgd4iJTuKvKNSQXL7Fm1A64FHDWKvnO6kS7kcoBuwooWx9vemEcT8OYsGJa4rAyiY7uM7gef9ZHlWZeaI0pNzNZ2-spZrpGthW8xHVNclyeHvYGnymZUq6JJJemtm_ETva0_aY0k-rT5kK4ttbcwaG2aJZlwlt9AZMcQjKjvpSdBOkC235XpFZ7YiiesSSZByxSZvg4dW-O5ACsz4yTVolHn5lg",
     'cache-control': "no-cache"
     }
 
-def get_keys(dl, keys_list):
-    if isinstance(dl, dict):
-        keys_list += dl.keys()
-        map(lambda x: get_keys(x, keys_list), dl.values())
-    elif isinstance(dl, list):
-        map(lambda x: get_keys(x, keys_list), dl)
+def getKeysFromTheJson(jsonObject, keys_list):
+    if isinstance(jsonObject, dict):
+        keys_list += jsonObject.keys()
+        map(lambda x: getKeysFromTheJson(x, keys_list), jsonObject.values())
+    elif isinstance(jsonObject, list):
+        map(lambda x: getKeysFromTheJson(x, keys_list), jsonObject)
 
 while countOfRequestsDone != NumberOfRequestsInQueue:
 	dataPayload = requestInformation[countOfRequestsDone].split(',')
@@ -24,8 +24,8 @@ while countOfRequestsDone != NumberOfRequestsInQueue:
 	url = dataPayload[1].strip()
 	payload = dataPayload[2].strip()
 
-	filenameTest = 'ZendeskTest/' + url.split('/')[-1] + '.txt'
-	filename = 'Zendesk/' + url.split('/')[-1] + '.txt'
+	filenameTest = 'DemoTest/' + url.split('/')[-1] + '.txt'
+	filename = 'Demo/' + url.split('/')[-1] + '.txt'
 
 	with open(filename, 'r') as file1:
 		with open(filenameTest, 'r') as file2:
@@ -34,8 +34,8 @@ while countOfRequestsDone != NumberOfRequestsInQueue:
 			testData = json.load(file2)
 			originalKeys = []
 			testKeys = []
-			get_keys(originalData, originalKeys)
-			get_keys(testData, testKeys)
+			getKeysFromTheJson(originalData, originalKeys)
+			getKeysFromTheJson(testData, testKeys)
 
 			differentKeys = set(originalKeys).difference(testKeys)
 

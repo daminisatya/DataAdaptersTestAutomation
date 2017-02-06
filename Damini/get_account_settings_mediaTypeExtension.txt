@@ -1,0 +1,160 @@
+{
+    "httpStatusCode": 200, 
+    "opstatus": 0, 
+    "settings": {
+        "lotus": {
+            "reporting": "true", 
+            "pod_id": "3", 
+            "prefer_lotus": "true"
+        }, 
+        "branding": {
+            "tab_background_color": "7FA239", 
+            "text_color": "FFFFFF", 
+            "page_background_color": "333333", 
+            "header_color": "78A300"
+        }, 
+        "twitter": {
+            "shorten_url": "never"
+        }, 
+        "onboarding": {
+            "checklist_onboarding_version": "2", 
+            "onboarding_segments": "internal_other"
+        }, 
+        "api": {
+            "accepted_api_agreement": "true", 
+            "api_password_access": "1", 
+            "api_token_access": "true"
+        }, 
+        "chat": {
+            "available": "true", 
+            "integrated": "false", 
+            "enabled": "false", 
+            "maximum_request_count": "1", 
+            "welcome_message": "Hi there. How can I help today?"
+        }, 
+        "statistics": {
+            "search": "true", 
+            "rule_usage": "true", 
+            "forum": "true"
+        }, 
+        "billing": {
+            "backend": "zuora"
+        }, 
+        "apps": {
+            "create_public": "false", 
+            "use": "true", 
+            "create_private": "true"
+        }, 
+        "gooddata_advanced_analytics": {
+            "enabled": "true"
+        }, 
+        "ticket_form": {
+            "raw_ticket_forms_instructions": "Please choose your issue below", 
+            "ticket_forms_instructions": "Please choose your issue below"
+        }, 
+        "cdn": {
+            "fallback_cdn_provider": "cloudfront", 
+            "cdn_provider": "default"
+        }, 
+        "google_apps": {
+            "has_google_apps_admin": "false", 
+            "has_google_apps": "false"
+        }, 
+        "user": {
+            "multiple_organizations": "false", 
+            "language_selection": "true", 
+            "end_user_phone_number_validation": "false", 
+            "time_zone_selection": "true", 
+            "agent_created_welcome_emails": "true", 
+            "tagging": "true"
+        }, 
+        "brands": {
+            "default_brand_id": "1903905", 
+            "require_brand_on_new_tickets": "false"
+        }, 
+        "tickets": {
+            "assign_tickets_upon_solve": "true", 
+            "maximum_personal_views_to_list": "8", 
+            "agent_collision": "false", 
+            "private_attachments": "false", 
+            "allow_group_reset": "true", 
+            "is_first_comment_private_enabled": "false", 
+            "collaboration": "true", 
+            "status_hold": "false", 
+            "list_empty_views": "true", 
+            "emoji_autocompletion": "true", 
+            "list_newest_comments_first": "true", 
+            "agent_ticket_deletion": "false", 
+            "rich_text_comments": "true", 
+            "comments_public_by_default": "true", 
+            "tagging": "true", 
+            "markdown_ticket_comments": "false"
+        }, 
+        "ticket_sharing_partners": {
+            "support_addresses": []
+        }, 
+        "limits": {
+            "attachment_size": "20971520"
+        }, 
+        "rule": {
+            "macro_most_used": "true", 
+            "macro_order": "alphabetical"
+        }, 
+        "active_features": {
+            "markdown": "false", 
+            "ticket_tagging": "true", 
+            "rich_content_in_emails": "false", 
+            "twitter": "false", 
+            "topic_suggestion": "false", 
+            "dynamic_contents": "false", 
+            "forum_analytics": "true", 
+            "ticket_forms": "false", 
+            "chat": "false", 
+            "automatic_answers": "false", 
+            "user_tagging": "true", 
+            "light_agents": "false", 
+            "language_detection": "false", 
+            "twitter_login": "false", 
+            "chat_about_my_ticket": "false", 
+            "csat_reason_code": "false", 
+            "agent_forwarding": "false", 
+            "on_hold_status": "false", 
+            "customer_satisfaction": "false", 
+            "advanced_analytics": "false", 
+            "feedback_tabs": "false", 
+            "user_org_fields": "false", 
+            "screencasts": "false", 
+            "facebook": "false", 
+            "google_login": "false", 
+            "facebook_login": "false", 
+            "insights": "false", 
+            "is_abusive": "false", 
+            "bcc_archiving": "false", 
+            "business_hours": "false", 
+            "allow_ccs": "true", 
+            "satisfaction_prediction": "false", 
+            "sandbox": "false", 
+            "suspended_ticket_notification": "false", 
+            "voice": "false"
+        }, 
+        "cross_sell": {
+            "show_chat_tooltip": "true"
+        }, 
+        "screencast": {
+            "enabled_for_tickets": "false"
+        }, 
+        "voice": {
+            "uk_mobile_forwarding": "true", 
+            "logging": "false", 
+            "only_during_business_hours": "false", 
+            "maximum_queue_size": "5", 
+            "maximum_queue_wait_time": "1", 
+            "enabled": "false", 
+            "recordings_public": "true", 
+            "agent_wrap_up_after_calls": "true", 
+            "maintenance": "false", 
+            "agent_confirmation_when_forwarding": "true", 
+            "outbound_enabled": "true"
+        }
+    }
+}

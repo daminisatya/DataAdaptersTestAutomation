@@ -1,2 +1,2 @@
-ratings
-6
+12
+counts
