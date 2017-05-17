@@ -1,0 +1,15 @@
+{
+	"requestAPIsInformationFileName" : "damini.txt",
+	"ResponseAPIsInformationFolderName" : "ZendeskInitial",
+	"HostName": "http://localhost:8080/",
+	"appName" : "zendesk",
+	"testDiff": true,
+	"ServiceDefFileName": "zendesk.xml",
+	"headers": {
+	    "content-type": "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
+	    "x-kony-authorization": "eyAiYWxnIjogIk5PTkUiLCAidHlwIjogImp3dCIgfQ.eyAiX3Njb3BlIjogImciLCAiX2FjcyI6ICIxMDAwMDAwMTciLCAiX3Nlc3Npb25faWQiOiAiOTE5YWI3ZTYtNmI0NS00OWExLWI3MzctYjIzMjFlMTVmMDU4IiwgIl92ZXIiOiAidjEuMSIsICJfaWRwIjogIlplbkRlc2siLCAiaXNzIjogImh0dHBzOi8vMTAwMDAwMDE3LmF1dGgucWEta29ueWNsb3VkLmNvbSIsICJpYXQiOiAxNDkzOTc4NDI1LCAiX3Nlc3Npb25fdGlkIjogIjEwMDAwMDAxNyIsICJleHAiOiAxNDkzOTgyMDI1LCAiX2lzc21ldGEiOiAiL21ldGFkYXRhL1BMUUx1SU5BY1dKVE42Tk5fU1FuT3c9PSIsICJfcHJvdl91c2VyaWQiOiAiYXV0aGVudGljYXRlZHVzZXIiLCAianRpIjogImY5MzE5MDNiLTg1MjktNGY1Ni05NDIxLTFkOTg2NmQ3ODNhNCIsICJfcHJvdmlkZXJzIjogWyAiWmVuRGVzayIgXSwgIl9hdXRoeiI6ICJleUp3WlhKdGFYTnphVzl1Y3lJNmUzMHNJbkp2YkdWeklqcGJYWDAiLCAiX3B1aWQiOiA0IH0.MCwCFF2CYFzQoBo6IikBvYVt_dJuN5UyAhRIhuZbJCjgVge-IHMumcMobhNDkQ",
+	    "cache-control": "no-cache"
+	},
+	"OriginalResponse": "ZendeskInitial",
+	"TestResponse": "ZendeskTest"
+}

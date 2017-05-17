@@ -1,0 +1,481 @@
+{
+    "ticket": [
+        {
+            "via": {
+                "source": {
+                    "to": {}, 
+                    "from": {}
+                }, 
+                "channel": "sample_ticket"
+            }, 
+            "updated_at": "2017-04-19T08:45:52Z", 
+            "submitter_id": "1908001933", 
+            "assignee_id": "1908001933", 
+            "brand_id": "3189385", 
+            "id": "1", 
+            "custom_fields": [
+                {
+                    "id": "44856469"
+                }, 
+                {
+                    "id": "44856489"
+                }
+            ], 
+            "subject": "Sample ticket: Meet the ticket", 
+            "sharing_agreement_ids": [], 
+            "collaborator_ids": [], 
+            "priority": "normal", 
+            "type": "incident", 
+            "status": "open", 
+            "description": "Hi Satya,\n\nEmails, chats, voicemails, and tweets are captured in Zendesk Support as tickets. Start typing above to respond and click Submit to send. To test how an email becomes a ticket, send a message to support@kony55.zendesk.com.\n\nCurious about what your customers will see when you reply? Check out this video:\nhttps://demos.zendesk.com/hc/en-us/articles/202341799\n", 
+            "tags": [
+                "sample", 
+                "support", 
+                "zendesk"
+            ], 
+            "is_public": "true", 
+            "requester_id": "1909656673", 
+            "raw_subject": "Sample ticket: Meet the ticket", 
+            "fields": [
+                {
+                    "id": "44856469"
+                }, 
+                {
+                    "id": "44856489"
+                }
+            ], 
+            "created_at": "2017-04-19T08:45:51Z", 
+            "url": "https://kony55.zendesk.com/api/v2/tickets/1.json", 
+            "allow_channelback": "false", 
+            "has_incidents": "false", 
+            "group_id": "28361805"
+        }, 
+        {
+            "via": {
+                "source": {
+                    "to": {}, 
+                    "from": {}
+                }, 
+                "channel": "api"
+            }, 
+            "updated_at": "2017-04-28T09:01:30Z", 
+            "submitter_id": "1908001933", 
+            "assignee_id": "1908001933", 
+            "brand_id": "3189385", 
+            "id": "2", 
+            "custom_fields": [
+                {
+                    "id": "44856469"
+                }, 
+                {
+                    "id": "44856489"
+                }
+            ], 
+            "subject": "My printer is on fire!", 
+            "sharing_agreement_ids": [], 
+            "collaborator_ids": [], 
+            "status": "open", 
+            "description": "The smoke is very colorful", 
+            "tags": [], 
+            "organization_id": "914738693", 
+            "is_public": "true", 
+            "requester_id": "1908001933", 
+            "raw_subject": "My printer is on fire!", 
+            "fields": [
+                {
+                    "id": "44856469"
+                }, 
+                {
+                    "id": "44856489"
+                }
+            ], 
+            "created_at": "2017-04-28T09:01:30Z", 
+            "url": "https://kony55.zendesk.com/api/v2/tickets/2.json", 
+            "allow_channelback": "false", 
+            "has_incidents": "false", 
+            "group_id": "28361805"
+        }, 
+        {
+            "via": {
+                "source": {
+                    "to": {}, 
+                    "from": {}
+                }, 
+                "channel": "web"
+            }, 
+            "updated_at": "2017-04-28T09:09:27Z", 
+            "submitter_id": "1908001933", 
+            "assignee_id": "1908001933", 
+            "brand_id": "3189385", 
+            "id": "3", 
+            "custom_fields": [
+                {
+                    "id": "44856469", 
+                    "value": "43"
+                }, 
+                {
+                    "id": "44856489", 
+                    "value": "43"
+                }
+            ], 
+            "subject": "test", 
+            "sharing_agreement_ids": [], 
+            "collaborator_ids": [], 
+            "priority": "high", 
+            "type": "incident", 
+            "status": "open", 
+            "description": "test", 
+            "tags": [], 
+            "is_public": "true", 
+            "requester_id": "-1981615143", 
+            "raw_subject": "test", 
+            "fields": [
+                {
+                    "id": "44856469", 
+                    "value": "43"
+                }, 
+                {
+                    "id": "44856489", 
+                    "value": "43"
+                }
+            ], 
+            "created_at": "2017-04-28T09:09:27Z", 
+            "url": "https://kony55.zendesk.com/api/v2/tickets/3.json", 
+            "allow_channelback": "false", 
+            "has_incidents": "false", 
+            "group_id": "28361805"
+        }, 
+        {
+            "via": {
+                "source": {
+                    "to": {}, 
+                    "from": {}
+                }, 
+                "channel": "api"
+            }, 
+            "updated_at": "2017-05-02T07:06:49Z", 
+            "submitter_id": "1908001933", 
+            "assignee_id": "1908001933", 
+            "brand_id": "3189385", 
+            "id": "4", 
+            "custom_fields": [
+                {
+                    "id": "44856469"
+                }, 
+                {
+                    "id": "44856489"
+                }
+            ], 
+            "subject": "My printer is on fire!", 
+            "sharing_agreement_ids": [], 
+            "collaborator_ids": [], 
+            "status": "open", 
+            "description": "The smoke is very colorful", 
+            "tags": [], 
+            "organization_id": "914738693", 
+            "is_public": "true", 
+            "requester_id": "1908001933", 
+            "raw_subject": "My printer is on fire!", 
+            "fields": [
+                {
+                    "id": "44856469"
+                }, 
+                {
+                    "id": "44856489"
+                }
+            ], 
+            "created_at": "2017-05-02T07:06:49Z", 
+            "url": "https://kony55.zendesk.com/api/v2/tickets/4.json", 
+            "allow_channelback": "false", 
+            "has_incidents": "false", 
+            "group_id": "28361805"
+        }, 
+        {
+            "via": {
+                "source": {
+                    "to": {}, 
+                    "from": {}
+                }, 
+                "channel": "web"
+            }, 
+            "updated_at": "2017-05-02T07:24:31Z", 
+            "submitter_id": "1908001933", 
+            "assignee_id": "1908001933", 
+            "brand_id": "3189385", 
+            "id": "5", 
+            "custom_fields": [
+                {
+                    "id": "44856469", 
+                    "value": "358"
+                }, 
+                {
+                    "id": "44856489", 
+                    "value": "19"
+                }
+            ], 
+            "subject": "sfsd", 
+            "sharing_agreement_ids": [], 
+            "collaborator_ids": [], 
+            "status": "open", 
+            "description": "fsf", 
+            "tags": [], 
+            "is_public": "true", 
+            "requester_id": "-1763028463", 
+            "raw_subject": "sfsd", 
+            "fields": [
+                {
+                    "id": "44856469", 
+                    "value": "358"
+                }, 
+                {
+                    "id": "44856489", 
+                    "value": "19"
+                }
+            ], 
+            "created_at": "2017-05-02T07:12:36Z", 
+            "url": "https://kony55.zendesk.com/api/v2/tickets/5.json", 
+            "allow_channelback": "false", 
+            "has_incidents": "false", 
+            "group_id": "28361805"
+        }, 
+        {
+            "via": {
+                "source": {
+                    "to": {}, 
+                    "from": {}
+                }, 
+                "channel": "api"
+            }, 
+            "updated_at": "2017-05-02T07:19:58Z", 
+            "submitter_id": "1908001933", 
+            "brand_id": "3189385", 
+            "id": "6", 
+            "custom_fields": [
+                {
+                    "id": "44856469"
+                }, 
+                {
+                    "id": "44856489"
+                }
+            ], 
+            "subject": "My printer is on fire!", 
+            "sharing_agreement_ids": [], 
+            "collaborator_ids": [], 
+            "status": "new", 
+            "description": "The smoke is very colorful", 
+            "tags": [], 
+            "organization_id": "914738693", 
+            "is_public": "true", 
+            "requester_id": "1908001933", 
+            "raw_subject": "My printer is on fire!", 
+            "fields": [
+                {
+                    "id": "44856469"
+                }, 
+                {
+                    "id": "44856489"
+                }
+            ], 
+            "created_at": "2017-05-02T07:19:59Z", 
+            "url": "https://kony55.zendesk.com/api/v2/tickets/6.json", 
+            "allow_channelback": "false", 
+            "has_incidents": "false", 
+            "group_id": "28361805"
+        }, 
+        {
+            "via": {
+                "source": {
+                    "to": {}, 
+                    "from": {}
+                }, 
+                "channel": "api"
+            }, 
+            "updated_at": "2017-05-02T09:06:56Z", 
+            "submitter_id": "1908001933", 
+            "brand_id": "3189385", 
+            "id": "7", 
+            "custom_fields": [
+                {
+                    "id": "44856469", 
+                    "value": "109"
+                }, 
+                {
+                    "id": "44856489", 
+                    "value": "109"
+                }
+            ], 
+            "subject": "My printer is on fire!", 
+            "sharing_agreement_ids": [], 
+            "collaborator_ids": [
+                1908001933
+            ], 
+            "status": "new", 
+            "description": "The smoke is very colorful", 
+            "tags": [], 
+            "organization_id": "914738693", 
+            "is_public": "true", 
+            "requester_id": "1908001933", 
+            "raw_subject": "My printer is on fire!", 
+            "fields": [
+                {
+                    "id": "44856469", 
+                    "value": "109"
+                }, 
+                {
+                    "id": "44856489", 
+                    "value": "109"
+                }
+            ], 
+            "created_at": "2017-05-02T07:36:49Z", 
+            "url": "https://kony55.zendesk.com/api/v2/tickets/7.json", 
+            "allow_channelback": "false", 
+            "has_incidents": "false", 
+            "group_id": "28361805"
+        }, 
+        {
+            "via": {
+                "source": {
+                    "to": {}, 
+                    "from": {}
+                }, 
+                "channel": "web"
+            }, 
+            "updated_at": "2017-05-02T09:41:26Z", 
+            "submitter_id": "1908001933", 
+            "assignee_id": "1908001933", 
+            "brand_id": "3189385", 
+            "id": "8", 
+            "custom_fields": [
+                {
+                    "id": "44856469", 
+                    "value": "6348"
+                }, 
+                {
+                    "id": "44856489", 
+                    "value": "1161"
+                }
+            ], 
+            "subject": "blah blah ticket", 
+            "sharing_agreement_ids": [], 
+            "collaborator_ids": [
+                1908001933
+            ], 
+            "priority": "normal", 
+            "type": "question", 
+            "status": "open", 
+            "description": "test", 
+            "tags": [], 
+            "organization_id": "914738693", 
+            "is_public": "true", 
+            "requester_id": "1908001933", 
+            "raw_subject": "blah blah ticket", 
+            "fields": [
+                {
+                    "id": "44856469", 
+                    "value": "6348"
+                }, 
+                {
+                    "id": "44856489", 
+                    "value": "1161"
+                }
+            ], 
+            "created_at": "2017-05-02T07:39:28Z", 
+            "url": "https://kony55.zendesk.com/api/v2/tickets/8.json", 
+            "allow_channelback": "false", 
+            "has_incidents": "false", 
+            "group_id": "28361805"
+        }, 
+        {
+            "via": {
+                "source": {
+                    "to": {}, 
+                    "from": {}
+                }, 
+                "channel": "api"
+            }, 
+            "updated_at": "2017-05-02T07:52:39Z", 
+            "submitter_id": "1908001933", 
+            "brand_id": "3189385", 
+            "id": "9", 
+            "custom_fields": [
+                {
+                    "id": "44856469"
+                }, 
+                {
+                    "id": "44856489"
+                }
+            ], 
+            "subject": "My printer is on fire!", 
+            "sharing_agreement_ids": [], 
+            "collaborator_ids": [], 
+            "status": "new", 
+            "description": "The smoke is very colorful", 
+            "tags": [], 
+            "organization_id": "914738693", 
+            "is_public": "true", 
+            "requester_id": "1908001933", 
+            "raw_subject": "My printer is on fire!", 
+            "fields": [
+                {
+                    "id": "44856469"
+                }, 
+                {
+                    "id": "44856489"
+                }
+            ], 
+            "created_at": "2017-05-02T07:52:39Z", 
+            "url": "https://kony55.zendesk.com/api/v2/tickets/9.json", 
+            "allow_channelback": "false", 
+            "has_incidents": "false", 
+            "group_id": "28361805"
+        }, 
+        {
+            "via": {
+                "source": {
+                    "to": {}, 
+                    "from": {}
+                }, 
+                "channel": "api"
+            }, 
+            "updated_at": "2017-05-02T10:20:22Z", 
+            "submitter_id": "1908001933", 
+            "assignee_id": "1908001933", 
+            "brand_id": "3189385", 
+            "id": "10", 
+            "custom_fields": [
+                {
+                    "id": "44856469"
+                }, 
+                {
+                    "id": "44856489"
+                }
+            ], 
+            "subject": "My printer is on fire!", 
+            "sharing_agreement_ids": [], 
+            "collaborator_ids": [], 
+            "status": "open", 
+            "description": "The smoke is very colorful", 
+            "tags": [], 
+            "organization_id": "914738693", 
+            "is_public": "true", 
+            "requester_id": "1908001933", 
+            "raw_subject": "My printer is on fire!", 
+            "fields": [
+                {
+                    "id": "44856469"
+                }, 
+                {
+                    "id": "44856489"
+                }
+            ], 
+            "created_at": "2017-05-02T10:20:22Z", 
+            "url": "https://kony55.zendesk.com/api/v2/tickets/10.json", 
+            "allow_channelback": "false", 
+            "has_incidents": "false", 
+            "group_id": "28361805"
+        }
+    ], 
+    "count": "10", 
+    "httpStatusCode": 200, 
+    "opstatus": 0
+}
