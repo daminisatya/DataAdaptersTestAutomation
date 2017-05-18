@@ -1,0 +1,1 @@
+'POST,https://marketplaceassets.qa-konycloud.com:443/services/zendeskTestDemo/get_tickets_mediaTypeExtension,------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name="domain"\r\n\r\nkony55\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name="mediaTypeExtension"\r\n\r\n.json\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW--

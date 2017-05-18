@@ -28,8 +28,10 @@ def loadAPIsResponseInformation() :
 		method = dataPayload[0].strip()
 		url = dataPayload[1].strip()
 		payload = dataPayload[2].strip()
+		if not os.path.exists(data["ResponseAPIsInformationFolderName"]):
+			os.makedirs(data["ResponseAPIsInformationFolderName"])
 		filename = data["ResponseAPIsInformationFolderName"] + "/" + url.split('/')[-1] + '.txt'
-		response = requests.request(method, url, data=payload, headers=data[headers]).json()
+		response = requests.request(method, url, data=payload, headers=data["headers"]).json()
 		outputFile = open(filename, 'w')
 		outputFile.write(json.dumps(response, indent=4))
 		countOfRequestsDone += 1
@@ -65,7 +67,7 @@ def loadAPIsRequestInformation() :
 	file_out = open(data["requestAPIsInformationFileName"], 'w')
 
 	for key, value in idInputMap.items():
-		formPayload = "POST," + data["HostName"] +"/services/" + data["appName"] + key + ","
+		formPayload = "POST," + data["HostName"] +"/services/" + data["appName"] + "/" +key + ","
 		for payload in value:
 			formPayload += payload[0] + 'name=\"' + payload[1] + '\"\r\n\r\n' + payload[2] + '\r\n'
 		formPayload += '------WebKitFormBoundary7MA4YWxkTrZu0gW--'
@@ -103,10 +105,13 @@ def getDiffBetweenResponses():
 				getKeysFromTheJson(originalData, originalKeys)
 				getKeysFromTheJson(testData, testKeys)
 
-				differentKeys = list_difference(originalKeys, testKeys)
+				differentKeys = list_difference(list(set(originalKeys)), list(set(testKeys)))
+
+		if not os.path.exists('testFailures'):
+			os.makedirs('testFailures')
 
 		if len(differentKeys) > 0:
-			errorLogFileName = 'testFailures/ErrorLog' + url.split('/')[-1] + '.txt'
+			errorLogFileName = 'testFailures/ErrorLog_' + url.split('/')[-1] + '.txt'
 			with open(errorLogFileName, 'w') as file_out:
 				for line in differentKeys:
 					file_out.write(line)
@@ -117,11 +122,10 @@ def getDiffBetweenResponses():
 with open('properties.json') as data_file:    
     data = json.load(data_file)
 
-if os.path.exists(data["requestAPIsInformationFileName"]) and os.path.getsize(data["requestAPIsInformationFileName"]) > 0:
+if not os.path.exists(data["requestAPIsInformationFileName"]) and not os.path.getsize(data["requestAPIsInformationFileName"]) > 0:
 	loadAPIsResponseInformation()
-else :
+if data["testDiff"] != 1:
 	loadAPIsRequestInformation()
 	loadAPIsResponseInformation()
-
-if data["testDiff"] :
+if data["testDiff"] == 1:
 	getDiffBetweenResponses()
