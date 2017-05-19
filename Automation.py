@@ -34,14 +34,19 @@ def loadAPIsResponseInformation() :
 	NumberOfRequestsInQueue = len(requestInformation)
 	countOfRequestsDone = 0
 
+	if not os.path.exists(data["OriginalResponse"]):
+		fileName = data["OriginalResponse"]
+	else:
+		fileName = data["TestResponse"]
+		
+	os.makedirs(fileName)
+		
 	while countOfRequestsDone != NumberOfRequestsInQueue:
 		dataPayload = requestInformation[countOfRequestsDone].split(',')
 		method = dataPayload[0].strip()
 		url = dataPayload[1].strip()
-		payload = dataPayload[2].strip()
-		if not os.path.exists(data["ResponseAPIsInformationFolderName"]):
-			os.makedirs(data["ResponseAPIsInformationFolderName"])
-		filename = data["ResponseAPIsInformationFolderName"] + "/" + url.split('/')[-1] + '.txt'
+		payload = dataPayload[2].strip()		
+		filename = fileName + "/" + url.split('/')[-1] + '.txt'
 		response = requests.request(method, url, data=payload, headers=data["headers"]).json()
 		outputFile = open(filename, 'w')
 		outputFile.write(json.dumps(response, indent=4))
@@ -50,10 +55,7 @@ def loadAPIsResponseInformation() :
 	print "Done loading API Response Information"
 
 def list_difference(list1, list2):
-    """uses list1 as the reference, returns list of items not in list2"""
-    c = set(list1).union(set(list2))
-    d = set(list1).intersection(set(list2))
-    return list(c - d)
+	return list([list(list1 - list2) , list(list2 - list1)])
 
 def loadAPIsRequestInformation() :
 	tree = etree.parse(data["ServiceDefFileName"])
@@ -78,14 +80,12 @@ def loadAPIsRequestInformation() :
 	file_out = open(data["requestAPIsInformationFileName"], 'w')
 
 	for key, value in idInputMap.items():
-		formPayload = "POST," + data["HostName"] +"/services/" + data["appName"] + "/" + key + ","
+		formPayload = "POST," + data["HostName"] +"/services/" + data["serviceName"] + "/" + key + ","
 		for payload in value:
 			formPayload += payload[0] + 'name=\"' + payload[1] + '\"\r\n\r\n' + payload[2] + '\r\n'
 		formPayload += '------WebKitFormBoundary7MA4YWxkTrZu0gW--'
 
-		print repr(formPayload)
-
-		file_out.write(repr(formPayload)[1:-1])
+		file_out.write(repr(formPayload)[2:-1])
 		file_out.write('\n')
 	print "Done loading API Request Information"
 
@@ -118,10 +118,7 @@ def getDiffBetweenResponses():
 				getKeysFromTheJson(originalData, originalKeys)
 				getKeysFromTheJson(testData, testKeys)
 
-				print originalKeys
-				print testKeys
-
-				differentKeys = list_difference(list(set(originalKeys)), list(set(testKeys)))
+				differentKeys = list_difference(set(originalKeys), set(testKeys))
 
 		if not os.path.exists('testFailures'):
 			os.makedirs('testFailures')
@@ -129,16 +126,15 @@ def getDiffBetweenResponses():
 		if len(differentKeys) > 0:
 			errorLogFileName = 'testFailures/ErrorLog_' + url.split('/')[-1] + '.txt'
 			with open(errorLogFileName, 'w') as file_out:
-				for line in differentKeys:
-					file_out.write(line)
-					file_out.write('\n')
+				file_out.write(str(differentKeys))
 
 		countOfRequestsDone += 1
 
-if os.path.exists(data["requestAPIsInformationFileName"]) and os.path.getsize(data["requestAPIsInformationFileName"]) > 0:
-	loadAPIsResponseInformation()
-if data["testDiff"] != 1:
-	loadAPIsRequestInformation()
-	loadAPIsResponseInformation()
-if data["testDiff"] == 1:
+if  not os.path.exists(data["OriginalResponse"]) or not os.path.exists(data["TestResponse"]):
+	if os.path.exists(data["requestAPIsInformationFileName"]) and os.path.getsize(data["requestAPIsInformationFileName"]) > 0:
+		loadAPIsResponseInformation()
+	else:
+		loadAPIsRequestInformation()
+		loadAPIsResponseInformation()
+else:
 	getDiffBetweenResponses()
