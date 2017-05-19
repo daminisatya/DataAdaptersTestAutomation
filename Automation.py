@@ -4,24 +4,35 @@ import polling
 import os
 from lxml import etree, objectify
 
+
+with open('properties.json') as data_file:    
+    data = json.load(data_file)
+
+# url = data["login"]["url"] + "/" + data["login"]["type"] + "/login?provider=" + data["login"]["prov"]
+
+# payload = { "userid": "maverick123nerd@gmail.com",
+# 			"password" : "maverick123nerd"
+# 		}
+# headers = {
+#     'content-type': "application/x-www-form-urlencoded",
+#     'cache-control': "no-cache"
+#     }
+
+# response = requests.request("POST", url, data=payload, headers=headers).json()
+
+# print json.dumps(response, indent=4)
+
+# responseAuthKeys = polling.poll(
+#     lambda: requests.request("POST", url, data=payload, headers=headers).json(),
+# 	step=60,
+#     poll_forever=True
+# )
+
+
 def loadAPIsResponseInformation() :
 	requestInformation = [request.rstrip('\n') for request in open(data["requestAPIsInformationFileName"])]
 	NumberOfRequestsInQueue = len(requestInformation)
 	countOfRequestsDone = 0
-
-	# url = "http://localhost:8080/authService/accounts/login"
-
-	# payload = "userid=root%40kony.com&password=Kony%40123"
-	# headers = {
-	#     'content-type': "application/x-www-form-urlencoded",
-	#     'cache-control': "no-cache"
-	#     }
-
-	# responseAuthKeys = polling.poll(
-	#     lambda: requests.request("POST", url, data=payload, headers=headers).json(),
-	# 	step=60,
-	#     poll_forever=True
-	# )
 
 	while countOfRequestsDone != NumberOfRequestsInQueue:
 		dataPayload = requestInformation[countOfRequestsDone].split(',')
@@ -67,10 +78,12 @@ def loadAPIsRequestInformation() :
 	file_out = open(data["requestAPIsInformationFileName"], 'w')
 
 	for key, value in idInputMap.items():
-		formPayload = "POST," + data["HostName"] +"/services/" + data["appName"] + "/" +key + ","
+		formPayload = "POST," + data["HostName"] +"/services/" + data["appName"] + "/" + key + ","
 		for payload in value:
 			formPayload += payload[0] + 'name=\"' + payload[1] + '\"\r\n\r\n' + payload[2] + '\r\n'
 		formPayload += '------WebKitFormBoundary7MA4YWxkTrZu0gW--'
+
+		print repr(formPayload)
 
 		file_out.write(repr(formPayload)[1:-1])
 		file_out.write('\n')
@@ -105,6 +118,9 @@ def getDiffBetweenResponses():
 				getKeysFromTheJson(originalData, originalKeys)
 				getKeysFromTheJson(testData, testKeys)
 
+				print originalKeys
+				print testKeys
+
 				differentKeys = list_difference(list(set(originalKeys)), list(set(testKeys)))
 
 		if not os.path.exists('testFailures'):
@@ -119,10 +135,7 @@ def getDiffBetweenResponses():
 
 		countOfRequestsDone += 1
 
-with open('properties.json') as data_file:    
-    data = json.load(data_file)
-
-if not os.path.exists(data["requestAPIsInformationFileName"]) and not os.path.getsize(data["requestAPIsInformationFileName"]) > 0:
+if os.path.exists(data["requestAPIsInformationFileName"]) and os.path.getsize(data["requestAPIsInformationFileName"]) > 0:
 	loadAPIsResponseInformation()
 if data["testDiff"] != 1:
 	loadAPIsRequestInformation()
