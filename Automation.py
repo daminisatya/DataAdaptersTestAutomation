@@ -2,32 +2,29 @@ import requests
 import json
 import polling
 import os
-from lxml import etree, objectify
+from lxml import etree
 
 
 with open('properties.json') as data_file:    
     data = json.load(data_file)
 
-# url = data["login"]["url"] + "/" + data["login"]["type"] + "/login?provider=" + data["login"]["prov"]
 
-# payload = { "userid": "maverick123nerd@gmail.com",
-# 			"password" : "maverick123nerd"
-# 		}
-# headers = {
-#     'content-type': "application/x-www-form-urlencoded",
-#     'cache-control': "no-cache"
-#     }
+url = data["login"]["url"] + "/" + data["login"]["type"] + "/login?provider=" + data["login"]["prov"]
 
-# response = requests.request("POST", url, data=payload, headers=headers).json()
+payload = { "userid": "maverick123nerd@gmail.com",
+			"password" : "maverick123nerd"
+		}
 
-# print json.dumps(response, indent=4)
+headers = {
+    'content-type': "application/x-www-form-urlencoded",
+    'cache-control': "no-cache"
+    }
 
-# responseAuthKeys = polling.poll(
-#     lambda: requests.request("POST", url, data=payload, headers=headers).json(),
-# 	step=60,
-#     poll_forever=True
-# )
-
+responseAuthKeys = polling.poll(
+    lambda: requests.request("POST", url, data=payload, headers=headers).json(),
+	step=20,
+    poll_forever=True
+)
 
 def loadAPIsResponseInformation() :
 	requestInformation = [request.rstrip('\n') for request in open(data["requestAPIsInformationFileName"])]
@@ -47,6 +44,7 @@ def loadAPIsResponseInformation() :
 		url = dataPayload[1].strip()
 		payload = dataPayload[2].strip()		
 		filename = fileName + "/" + url.split('/')[-1] + '.txt'
+		data["headers"]["x-kony-authorization"] = responseAuthKeys["claims_token"]
 		response = requests.request(method, url, data=payload, headers=data["headers"]).json()
 		outputFile = open(filename, 'w')
 		outputFile.write(json.dumps(response, indent=4))
@@ -129,6 +127,7 @@ def getDiffBetweenResponses():
 				file_out.write(str(differentKeys))
 
 		countOfRequestsDone += 1
+
 
 if  not os.path.exists(data["OriginalResponse"]) or not os.path.exists(data["TestResponse"]):
 	if os.path.exists(data["requestAPIsInformationFileName"]) and os.path.getsize(data["requestAPIsInformationFileName"]) > 0:
